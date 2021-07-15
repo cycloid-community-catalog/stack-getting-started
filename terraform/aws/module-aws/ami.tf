@@ -3,7 +3,7 @@ data "aws_ami" "debian" {
 
   filter {
     name   = "name"
-    values = ["debian-stretch-*"]
+    values = ["debian-10-amd64-*"]
   }
 
   filter {
@@ -21,5 +21,5 @@ data "aws_ami" "debian" {
     values = ["ebs"]
   }
 
-  owners = ["379101102735"] # Debian
+  owners = ["101072000470"] # Debian
 }

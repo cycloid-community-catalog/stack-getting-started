@@ -1,7 +1,7 @@
 ---
 # Configuration of the Cycloid stack
 version: '2'
-name: 'aws-getting-started'
+name: 'getting-started'
 canonical: 'stack-getting-started'
 keywords:
   - 'aws'
