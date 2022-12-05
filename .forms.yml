@@ -95,30 +95,14 @@ azure:
         type: string
         values: [eastasia,southeastasia,centralus,eastus,eastus2,westus,northcentralus,southcentralus,northeurope,westeurope,japanwest,japaneast,brazilsouth,australiaeast,australiasoutheast,southindia,centralindia,westindia,canadacentral,canadaeast,uksouth,ukwest,westcentralus,westus2,koreacentral,koreasouth,francecentral,francesouth,australiacentral,australiacentral2,uaecentral,uaenorth,southafricanorth,southafricawest,switzerlandnorth,switzerlandwest,germanynorth,germanywestcentral,norwaywest,norwayeast]
         default: francecentral
-      - name: "Azure subscription id"
-        description: "The Subscription ID which should be used"
-        key: azure_subscription_id
+      - name: "Azure credential"
+        description: "The azure credential containing subscription_id, tenant_id, client_id, client_secret"
+        key: azure_cred
         widget: cy_cred
+        widget_config:
+          full_cred: false
         type: string
-        default: "((azure_step-by-step.subscription_id))"
-      - name: "Azure tenant id"
-        description: "The Tenant ID which should be used"
-        key: azure_tenant_id
-        widget: cy_cred
-        type: string
-        default: "((azure_step-by-step.tenant_id))"
-      - name: "Azure client id"
-        description: "The Client ID which should be used"
-        key: azure_client_id
-        widget: cy_cred
-        type: string
-        default: "((azure_step-by-step.client_id))"
-      - name: "Azure client secret"
-        description: "The Client Secret which should be used"
-        key: azure_client_secret
-        widget: cy_cred
-        type: string
-        default: "((azure_step-by-step.client_secret))"
+        default: "((azure_step-by-step))"
     Stack-configuration:
       - name: "Config repository"
         description: "Service catalog repository containing your private stack"
