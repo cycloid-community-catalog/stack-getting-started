@@ -12,12 +12,18 @@ aws:
         description: "AWS access key id which should be used"
         key: aws_access_key
         widget: cy_cred
+        widget_config:
+          cred_types:
+            - aws
         type: string
         default: "((aws_step-by-step.access_key))"
       - name: "AWS secret key"
         description: "AWS secret key which should be used"
         key: aws_secret_key
         widget: cy_cred
+        widget_config:
+          cred_types:
+            - aws
         type: string
         default: "((aws_step-by-step.secret_key))"
     Stack-configuration:
@@ -38,6 +44,9 @@ aws:
         description: "Credential (SSH key) used to fetch the config repository"
         key: git_ssh_key
         widget: cy_cred
+        widget_config:
+          cred_types:
+            - ssh
         type: string
         default: "((ssh_step-by-step.ssh_key))"
     Terraform:
@@ -101,6 +110,8 @@ azure:
         widget: cy_cred
         widget_config:
           full_cred: false
+          cred_types:
+            - azure
         type: string
         default: "((azure_step-by-step))"
     Stack-configuration:
@@ -121,6 +132,9 @@ azure:
         description: "Credential (SSH key) used to fetch the config repository"
         key: git_ssh_key
         widget: cy_cred
+        widget_config:
+          cred_types:
+            - ssh
         type: string
         default: "((ssh_step-by-step.ssh_key))"
     Terraform:
@@ -128,12 +142,18 @@ azure:
         description: "Azure account storage used to store Terraform tfstate file"
         key: terraform_storage_account_name
         widget: cy_cred
+        widget_config:
+          cred_types:
+            - azure_storage
         type: string
         default: "((azure_storage_step-by-step.account_name))"
       - name: "Terraform Azure storage access key"
         description: "Azure storage access key used to store Terraform tfstate file"
         key: terraform_storage_access_key
         widget: cy_cred
+        widget_config:
+          cred_types:
+            - azure_storage
         type: string
         default: "((azure_storage_step-by-step.access_key))"
       - name: "Azure storage container name"
@@ -151,7 +171,6 @@ azure:
   terraform:
     configuration:
       - name: "Azure subnet id"
-        description: "Subnet on which you want to create the instance"
         key: subnet_id
         description: "it should looks like: /subscriptions/.../Microsoft.Network/virtualNetworks/default/subnets/default"
         widget: simple_text
@@ -186,6 +205,9 @@ gcp:
         description: "GCP credentials in json format which should be used"
         key: gcp_credentials_json
         widget: cy_cred
+        widget_config:
+          cred_types:
+            - gcp
         type: string
         default: "((gcp_step-by-step.json_key))"
     Stack-configuration:
@@ -206,6 +228,9 @@ gcp:
         description: "Credential (SSH key) used to fetch the config repository"
         key: git_ssh_key
         widget: cy_cred
+        widget_config:
+          cred_types:
+            - ssh
         type: string
         default: "((ssh_step-by-step.ssh_key))"
     Terraform:
