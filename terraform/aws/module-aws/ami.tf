@@ -21,5 +21,5 @@ data "aws_ami" "debian" {
     values = ["ebs"]
   }
 
-  owners = ["101072000470"] # Debian
+  owners = ["136693071363"] # Debian
 }
