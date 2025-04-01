@@ -1,9 +1,8 @@
 ---
 # Configuration of the Cycloid stack
-version: '3'
+version: '4'
 name: 'getting-started'
 canonical: 'stack-getting-started'
-status: 'public'
 keywords:
   - 'aws'
   - 'azure'
