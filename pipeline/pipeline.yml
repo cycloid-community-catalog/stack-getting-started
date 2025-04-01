@@ -20,7 +20,7 @@ shared:
         - name: merged-stack
           path: "merged-stack"
     params:
-      CONFIG_PATH: ($ .project $)/terraform/($ .environment $)
+      CONFIG_PATH: ($ .config_root $)/terraform
       STACK_PATH: terraform/($ .use_case $)
 
 groups:
@@ -37,7 +37,7 @@ resource_types:
   type: registry-image
   source:
     repository: cycloid/terraform-resource
-    tag: '1.6.3'
+    tag: '1.10.5'
 
 resources:
 - name: tfstate
@@ -93,7 +93,7 @@ resources:
     private_key: ((($ .config_repository_credential_path $).ssh_key))
     ($- end $)
     paths:
-      - ($ .project $)/terraform/($ .environment $)/*
+      - ($ .config_root $)/terraform/*
 
 jobs:
   - name: terraform-plan
