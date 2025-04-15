@@ -1,9 +1,8 @@
 ---
 # Configuration of the Cycloid stack
-version: '3'
+version: '4'
 name: 'getting-started'
 canonical: 'stack-getting-started'
-status: 'public'
 keywords:
   - 'aws'
   - 'azure'
@@ -38,10 +37,10 @@ config:
         path: pipeline/pipeline.yml
       variables:
         path: pipeline/variables.sample.yml
-        destination: ($ .project $)/pipeline/($ .environment $)/variables.yml
+        destination: '($ .config_root $)/pipeline/variables.yml'
     terraform:
       config:
-        destination: ($ .project $)/terraform/($ .environment $)/main.tf
+        destination: '($ .config_root $)/terraform/main.tf'
         path: terraform/aws/main.tf.sample
 
   azure:
@@ -53,10 +52,10 @@ config:
         path: pipeline/pipeline.yml
       variables:
         path: pipeline/variables.sample.yml
-        destination: ($ .project $)/pipeline/($ .environment $)/variables.yml
+        destination: '($ .config_root $)/pipeline/variables.yml'
     terraform:
       config:
-        destination: ($ .project $)/terraform/($ .environment $)/main.tf
+        destination: '($ .config_root $)/terraform/main.tf'
         path: terraform/azure/main.tf.sample
 
   gcp:
@@ -68,8 +67,8 @@ config:
         path: pipeline/pipeline.yml
       variables:
         path: pipeline/variables.sample.yml
-        destination: ($ .project $)/pipeline/($ .environment $)/variables.yml
+        destination: '($ .config_root $)/pipeline/variables.yml'
     terraform:
       config:
-        destination: ($ .project $)/terraform/($ .environment $)/main.tf
+        destination: '($ .config_root $)/terraform/main.tf'
         path: terraform/gcp/main.tf.sample
